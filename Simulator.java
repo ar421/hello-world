@@ -15,4 +15,12 @@ class ARM extends Simulator() {
 }
 enum Type {
   Type(x86,ARM);
+  @override
+  public Class getClass() {
+    if(this instanceof x86) {
+      return x86.getClassName();
+    } else if (this instanceof ARM) {
+      return ARM.getClassName();
+    }
+  }
 }
